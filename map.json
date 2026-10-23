@@ -1,0 +1,55 @@
+{
+  "operationalLayers": [
+    {
+      "id": "1a12053377d-layer-2",
+      "title": "Police Stations (NYPD)",
+      "url": "https://services1.arcgis.com/8cuieNI8NbqQZQVJ/arcgis/rest/services/Emergency_Services/FeatureServer/1",
+      "layerType": "ArcGISFeatureLayer",
+      "blendMode": "normal"
+    }
+  ],
+  "baseMap": {
+    "baseMapLayers": [
+      {
+        "id": "gray-base-layer",
+        "opacity": 1,
+        "title": "Light Gray Base",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json"
+      },
+      {
+        "id": "gray-reference-layer",
+        "opacity": 1,
+        "title": "Light Gray Reference",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/1768e8369a214dfab4e2167d5c5f2454/resources/styles/root.json",
+        "isReference": true
+      }
+    ],
+    "title": "Light Gray Canvas"
+  },
+  "authoringApp": "ArcGIS API for JavaScript",
+  "authoringAppVersion": "5.1",
+  "initialState": {
+    "viewpoint": {
+      "targetGeometry": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -8256445.871235595,
+        "ymin": 4944837.447924069,
+        "xmax": -8203475.010633948,
+        "ymax": 4974877.200040155
+      }
+    }
+  },
+  "spatialReference": {
+    "latestWkid": 3857,
+    "wkid": 102100
+  },
+  "timeZone": "system",
+  "version": "2.37"
+}

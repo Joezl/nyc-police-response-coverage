@@ -1,0 +1,121 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-09T05:59:31.186Z",
+  "item": {
+    "title": "NYC Police Response Coverage",
+    "subtitle": "Select an NYPD station to generate a 10-minute driving service area"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "default"
+    },
+    "layout": {
+      "right": {
+        "hidden": false,
+        "width": "360px",
+        "title": "Station search & coverage",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "station-service-area",
+            "title": "Choose a police station"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "title": "Map legend",
+        "config": {}
+      },
+      {
+        "id": "home",
+        "type": "home",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "default-layer-list",
+        "type": "layerList",
+        "slot": "top-right",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "station-service-area",
+        "label": "Station search and 10-minute driving coverage",
+        "bundlePath": "./runtime/behaviors/station-service-area-c6cf868cf0edac01.js",
+        "sourceSha256": "c6cf868cf0edac01b1dea133b16c5193cfce5bdf03e5caeb0baf0e1bf6dfce81",
+        "modulePaths": [
+          "esri/Graphic",
+          "esri/portal/Portal",
+          "esri/rest/networkService",
+          "esri/rest/serviceArea",
+          "esri/rest/support/FeatureSet",
+          "esri/rest/support/ServiceAreaParameters"
+        ],
+        "config": {
+          "stationLayerId": "1a12053377d-layer-2",
+          "minutes": 10
+        },
+        "mounts": [
+          "station-service-area"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "police-station-click",
+            "trigger": {
+              "type": "feature-click",
+              "layerId": "1a12053377d-layer-2"
+            },
+            "actionId": "solve-station-area"
+          }
+        ],
+        "installedAt": "2026-10-09T11:01:58.511Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "4ae3f358-9a5d-4b73-b32d-099f87622e6b",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-ff62e9f7-8898-4d48-a948-5771d50656c4",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-09T05:59:31.184Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": [],
+    "notes": [
+      "Police-station locations sourced from NYC Emergency Management's Emergency Facilities HMP 2024 web map; original facilities list compiled by NYC Department of City Planning.",
+      "Service areas use the signed-in portal's helper service and a 10-minute driving-time mode."
+    ]
+  }
+}
